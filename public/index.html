@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes App</title>
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Jquery Cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="bg-white text-black relative w-screen overflow-x-hidden max-h-screen overflow-y-hidden">
+    <header class="py-4 px-12">
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">The App <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">Notes</mark> For you</h1>
+    </header>
+    <!-- SEARCH SECTION -->
+    <section class="px-12">
+        <form>
+            <div class="flex">
+                <div class="relative w-full">
+                    <input type="search" class="block p-2.5 w-full z-20 text-md font-black outline-none rounded-lg text-gray-900 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Search" required id="search-input">
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- NOTES SECTION -->
+    <h1 class="px-12 my-6 font-black text-3xl">TODO</h1>
+    <section class="w-full p-2 px-12">
+
+        <!-- form -->
+        <form class="gap-4 flex-col hidden" id="form-add">
+            <input type="text" class="block p-2 w-full z-20 text-sm font-black outline-none rounded-lg text-gray-900 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Title" required id="title">
+            <textarea class="block p-2 w-full z-20 text-sm font-black outline-none rounded-lg text-gray-900 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Description" required id="description"></textarea>
+            <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white py-2 rounded mb-2 text-md font-bold">
+                Save
+            </button>
+        </form>
+
+        <!-- Create a new task -->
+        <div class="cursor-pointer rounded-xl border-dashed max-w-xs border-2 border-gray-500 text-blue-500 flex items-center justify-center font-black min-w-full mb-4 flex-col gap-4" style="height: 180px;" id="add-note">
+            ADD
+        </div>
+        <!-- tasks -->
+        <div class="grid grid-cols-3 gap-3" id="todo-list"></div>
+    </section>
+
+    <!-- DONE SECTION -->
+    <h1 class="px-12 my-6 font-black text-3xl">DONE</h1>
+    <section class="w-full p-2 px-12 grid grid-cols-3 gap-3" id="todo-done">
+    </section>
+    <!-- Own scripts -->
+    <script src="../src/js/core/notes.js" lang="javascript"></script>
+</body>
+</html>
